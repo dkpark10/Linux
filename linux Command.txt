@@ -1,0 +1,229 @@
+리눅스 명령어
+
+sudo: 관리자의 권한
+sudo apt-get install packagename -y : 뒤에 -y를 붙이면 묻지도
+따지지도 않고 다 예쓰~ 
+
+~: 물결표시는 홈밑에 자기사용계정 밑에
+
+런처 아이콘 밑으로: gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+
+samba설정 : 공유폴더 만들기
+삼바 설정 완료하고 윈도우에 \리눅스 ip주소 치고 로그인 하면 공유폴더 접근가능
+
+whoami : 현재 사용자
+
+pwd : 현재 디렉토리 
+
+ls : 디렉토리 안에 있는 내용
+ls name : 그 name폴더의 리스트 출력
+ll : ls -l 과 동일 디테일하게 출력
+ls -a : 숨겨진 파일 까지 보여주기
+ls -l : 디테일하게 출력
+ls -r : 하위 디렉토리까지 출력
+ls -h : 파일크기를 보기좋게 출력
+리다이렉션 연산자(>, >>)를 사용하여 디렉토리 
+내용을 파일에 저장할 수 있다.
+
+cd : 디렉토리 변경 및 본인의 홈디렉터리로 직빵 
+cd / : 최상위 디렉토리인 /로 변경 
+cd .. : 상위 디렉토리로 이동 
+이동 : cd / name / name / name ...
+
+mkdir : 폴더 만들기 
+- o : Open line, 현재의 줄 다음에 새로운 줄을 삽입 
+- O: Open line, 현재의 줄 앞에 새로운 줄을 삽입 
+
+cp : 카피 현재 디렉토리 및으로 동일한 이름으로 카피 
+ex) cp / usr / include / stdio.h . ->카피하고자 하는 stdio.h파일을 뒤에 점하나 붙이고 
+현재 디렉토리로 카피 
+
+ctrl + F : 한페이지씩 내리기
+ctrl + B : 한페이지씩 올리기 
+shift + 콜론 누르고 숫자 누르면 가장 그 줄로 감 
+대문자 G : 맨 마지막 줄로 감 
+
+잘못 눌렀다 치면 무조건 ESC 
+Ctrl + G 현재 명령 줄을 반환 (?)
+: se nu -> 줄 보여줌
+: se nonu -> 줄 보여준거 이제 숨김
+: q -> 나감 ZZ랑 동일
+q! : 강제종료 저장안하고
+
+shift + i  insert 모드로 편집 가능
+: u : undo 마지막 명령 취소 Ctrl + z 와 같음 
+: wq -> 저장하고 나가기 ZZ와 동일 
+
+소문자 더블유 : 워드단위로 점프
+대문자 에이 : 그 줄 맨끝으로 
+리부트 명령어 : systemctl reboot 
+
+dd : 커서가 있는 그 라인 통째로 지우기
+
+yy : 그 줄 통째로 복사 :
+nyy : n개의 라인 복사 
+N , N y : N부터 N까지복사 
+N N pu: 줄번호 NN다음에 붙여넣기
+yw : 단어 복사 
+Y : 커서부터 라인 끝까지
+yo : 커서부터 라인 첨까지 
+ps -ef | grep vi
+x : 한글자 삭제
+dw : 단어삭제 
+dd : 줄 삭제 
+:r <file> -> 파일의 내용 현재 편집기에 삽입
+1,$ d -> 전체 내용 삭제
+
+콜론 하고 더블유 : 저장
+
+:/ string -> 찾고자 하는 스트링값
+n : 다음 
+shift + n : 이전
+y + $ : 커서 부터 그 줄 끝까지 복사
+y + 0
+
+복사해서 불들어오온거 끄기
+: nohl
+
+mv : 파일 이동 및 이름 변경? 
+rm : 지우기 지우는 건 굉장히 신중하게 쓰자 
+more 파일명 : vi 열긴 부담스러워서 파일만 잠깐볼 때
+less 파일명 : vi 열긴 부담스러워서 파일만 잠깐볼 때
+
+ln -s stdio.h std : stdio.h를 std로 쓰겠다~~  깊숙한 곳 파일 디렉토리가 있는데
+자주 쓰고 싶을 때 
+Ctrl + u : 터미널에서 전체한줄 지울 때
+
+man ls : 도움말 
+grep : 파일에서 열이 들어있는 파일을 찾아 그 문자열이 들어가 있는 라인(행)을 
+화면에 출력한다.
+
+su : 유저를 바꾸는 명령 
+su - : 기존 유저의 환경셋팅(?)까지 다 셋팅해서 나오는거 
+
+useradd : 유저 하나 만드는거 ex)useradd <name> -m -s /bin/bash 이게 표준문법
+그러나 레드햇 계역에서는 useradd <name> 만 하면 댐
+passwd <name> : name의 비밀번호 셋팅
+
+chmod 777 : 이진수 비트에 따라 읽고 쓰는 권한 부여
+sudo vi/etc/bashrc : 에서 대문자 W를 소문자 w로 바꿔주면 
+터미널에서 모든경로를 보여줌 
+
+ps : 프로세스 들어가는 명령어
+kill -9 : 프로그램 강제 종료 및 삭제 
+디렉터리 내에 파일이 몇개있는지? : ls -l/ folder / folder / *h | wc -l
+df-h : 얼마나 용량을 쓰고 있는지 
+
+cat  <name> : 파일생성하고 그안에 내용 입력
+cat <name> : 파일 내용 출력
+cat -n <name> : 행 보여주면서 출력
+cat <origin> > <name> : origin의 출력내용을 리다이렉션으로 name의 이름으로
+파일 생성 즉 복사랑 똑같음
+:! ls/folder /folder -> vi편집중 디렉토리안에 내용 궁금할 때 
+: sh -> vi안에서 쉘을 불러옴 exit하면 다:시 vi로
+
+vi ~/.vimrc : c언어 코드 치는데 편리한 셋팅 예를들어 4칸 띄운다던가 등등
+ls /usr /sahre /vim /vim74 /colors : 편집기 색깔 취향대로
+
+----------------------------★★★ <GCC> ★★★---------------------
+
+gcc -c FILE.c -> c언어 컴파일러 생성 오브젝트파일이 생성됨 -c로 하면
+대형 프로젝트 할 때 오브젝트파일을 만들어서 실행을
+ 시켜야 함 a.out 오브젝트 파일이 생성됨
+
+gcc -o <NAME> <FILE.c> <FILE.c> <FILE.c> ...-> c언어 컴파일러 생성
+./ 현재 디렉토리 밑에있는 
+컴파일하고 실행 :  ./<FILENAME>
+
+헤더파일 경로 설정 : #include <fun.h> 이렇게 바꾸고
+gcc -I/home/dokyun/Test/sourceLoc/C_practice/include -o <file><file><file>mkd
+
+ :1,$ s/GNU/GPU : 1번라인부터 전체라인까지 바꿔라(substitude) GNU를 GPU로
+ :g/GNU/s//GPU/g : GNU를 GPU로 다 바꿔라 이게 문법 변수명 다 바꿀 때 유용 
+ :g/GPU/s/// : GPU를 다 지워라 
+
+mv [옵션] [원본] [이동경로 or 바꿀이름] : 맨마지막에 디렉토리라면 거기로 이동
+ 아니라면 이름변경
+
+ColorMain(타겟파일): PrintColor.o main.o  (타겟파일을 위한 재료)
+	gcc -o ColorMain PrintColor.o main.o  
+PrintColor.o: PrintColor.c 
+	gcc -c PrintColor.c 
+main.o: main.c
+	gcc -c main.c (목표를 달성하기위한 커맨드명령)
+
+------------------------- 치환해서 쓰는법 ----------------------예시
+OBJECTS=PrintArray.o main.o
+TARGET=PrintArrayMain
+
+$(TARGET) : $(OBJECTS)
+    gcc -o $@ $(OBJECTS)
+
+%.o: %.c
+    gcc -c -g $<
+
+clean:
+    rm -f $(TARGET) $(OBJECTS)
+
+현재 타켓보다 최근에 갱신된 파일을 물고들어와서 object를 만들어라 
+$@ = 현재목표파일 타겟 
+
+------------------------------------------------------------------------
+
+Makefile : 커맨드라인에 무조건 탭 이거하면 빌드 신경 쓸 일이 없음 
+메이크 파일 문법:
+목표파일 : 목표파일을 만드는페 필요한 구성요소
+(tab)목표르ㅜㄹ 달성하기 위한 명령1
+(tab)목표르ㅜㄹ 달성하기 위한 명령2
+clean : 새로 다 싹다 빌드하고 싶을 때
+
+makedebug 
+makerelease 
+make -f <makefilename> 너무 많아서 ~~~
+
+rm : 파일이나 디렉토리 지우기 한번지우면 복구 불가능이기 때문에 신중
+rm file.txt : file.txt를 지움
+rm *.dat : dat로 끝나는 파일 모두 삭제
+rm * : 모두삭제
+rm -f : 폴더삭제 
+<내부에 하위 폴더가 있는 경우>
+rm -r -f folderName
+rm -rf folderName
+
+J: 커서가 있는 줄 맨 뒷줄에 붙이고 싶으면 
+:vs , :sp 화면 분할 해줌 ~  나가기는 q 
+ctrl w + w : 분할된 화면에서 다른화면 전환
+ctrl w + W : 분할된 화면에서 다른화면 전환
+crtl w + o : 화면분할후 커서가 있는 창을 제외 모두 닫고싶을 때
+ctrl w + a : 한꺼번에 다 나가기 
+
+★★★ <디버거> ★★★
+
+gdb <Makefile>
+list : 코드 출력
+중단점 입력 : b 6 브레이크포인트 6라인에
+info b : 어디에 중단점을 잡았는지 보여줌 
+list N, N: n 부터 n까지 코드출력 
+s : 현재 행 수행후 정지 함수 내부로 들어간다.
+display 변수 : 변수값 보여줌 
+n : 현재 줄 수행 후 정지 함수호출시 함수내부로 들어가지않고 담라인 
+cont : ???
+q: 나가기
+delete N : 중단점 넘버 N을 삭제
+run : 실행하면 중단점부터 시작함
+
+코어덤프가 떨어졌을 때 지디비로 확인하고 
+어떤 시그날인지 확인하면 왜 코어덤프가 떨어졌는지 알 수 있음
+
+if C쉘 호환쉘을 쓰고 있다면 다음과 같은 명령 (tcsh)
+% limit core unlimited
+본쉘류를 사용 하고 있다면 (sh, bash, zsh, pdksh)
+ulimit -c unlimited
+
+EXPORT EDITOR=vi (?) 
+리다이렉션 : 명령어의 결과를 파일로 생성
+>& : 에러내용까지 저장
+심볼릭 링크 : 특정파일이나 디렉토리를 참조
+즉 c++참조 같은파일 다른 이름 
+문법 : ln -s <원본> <링크이름> 
+심볼릭 링크를 설정하면 삭제, 수정, 등록 모두 공유된다. 
