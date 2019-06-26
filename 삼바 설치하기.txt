@@ -1,0 +1,29 @@
+사이트: https://phj790122.blog.me/
+삼바는 공유폴더 설정하기위해
+
+터미널에 삼바설치
+1. sudo apt-get install samba samba-common -a <아이디>
+
+패스워드 설정
+2. sudo smbpasswd -a <아이디>
+
+설정 터미널에 아래 입력
+3. sudo vim /etc/samba/smb.conf 
+
+[dokyun]
+path=/home/dokyun
+comment=dokyun SAMBA SERVER
+valid user = dokyun
+writable=yes
+browseable=yes
+create mask=0777
+public=yes
+guest ok = no
+
+재시작 명령 입력
+4. sudo /etc/init.d/samba restart
+
+공유폴더 권한설정
+5. sudo chmod 777 ~/Downloads
+
+테스트 : \\192.168.1.207\dokyun 으로 입력
