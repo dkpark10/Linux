@@ -1,4 +1,5 @@
 http://egloos.zum.com/kimfeel82/v/317344
+https://extrememanual.net/12210
 윈도우 + R 누르고
 mstsc 누르고 
 로그인 하면 원격제어 ~~
