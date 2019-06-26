@@ -1,0 +1,28 @@
+사이트 :https://cupjoo.tistory.com/98
+1. SSH서버 설치
+sudo apt-get install ssh 터미널에 입력
+
+2. 편집
+sudo vi /etc/ssh/sshd_config 
+
+다음에
+PerimitRootLogin prohibit-password <- 주석처리하고
+PerimitRootLogin yes <- 입력
+
+3. 실행
+sudo service ssh start 
+ps -ef | grep sshd로 서버의 프로세스 확인
+sudo netstat -ntlp | grep sshd로 ip주소와 포트번호 확인 
+ifconfig 로 현재 컴터에 할당된 아이피 확인하자\
+
+윈도우에서 ssh server접속하기
+
+1.putty 다운로드 
+
+https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html 
+무설치 64bit버전의 putty.exe 다운받고 실행
+
+connection 목록에 들어가 60으로 입력
+서버접속시 일정시간동안 아무입력없음 자동으로 세션 종료 그러므로 60초마다 설정
+세션에 들어가 컴퓨터 이름 입력하고 저장
+그리고 오픈하고 로그인 해서 실행하기
