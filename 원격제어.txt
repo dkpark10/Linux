@@ -3,3 +3,4 @@ https://extrememanual.net/12210
 윈도우 + R 누르고
 mstsc 누르고 
 로그인 하면 원격제어 ~~
+로그인하고 유저를 변경해서 접속가능
