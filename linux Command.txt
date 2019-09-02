@@ -55,6 +55,8 @@ n : 다음
 shift + n : 이전
 y + $ : 커서 부터 그 줄 끝까지 복사
 y + 0
+:%s/origin/changed : origin을 changed로 변경
+ex) :%s/extraced/extracted 
 
 복사해서 불들어오온거 끄기
 : nohl
